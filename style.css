@@ -1,59 +1,84 @@
+:root{
+  --bg1: #ff7eb3;
+  --bg2: #ffb199;
+  --accent: #fff7a1;
+  --text: #061226;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family: "Segoe UI", Roboto, system-ui, Arial;}
+
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: #0b1225;
-  color: #e6eef8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 30%, #fbc2eb 60%, #a18cd1 100%);
+  min-height:100vh;
+  color:var(--text);
 }
 
 .container {
   text-align: center;
-  max-width: 900px;
-  width: 100%;
+  width: 960px;
+  max-width: 96%;
 }
 
 h1 {
-  margin: 10px 0 6px;
-  font-size: 22px;
-  color: #cfe7ff;
+  margin: 6px 0 8px;
+  font-size: 26px;
+  letter-spacing: 0.6px;
+  color: #fff;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.20);
 }
 
+/* Rainbow scoreboard */
 #scoreboard {
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:14px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b, #ffb3cc, #b28dff, #6be6b5);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  color: #061226;
   font-size: 28px;
-  margin-bottom: 8px;
+  font-weight: 700;
+  margin-bottom: 12px;
   user-select: none;
 }
 
-.sep {
-  margin: 0 12px;
-  color: #90b8ff;
-}
+.sep { margin: 0 14px; opacity:0.9; }
 
+/* Canvas */
 canvas {
-  display: block;
-  margin: 12px auto;
-  background: linear-gradient(180deg, #061022 0%, #0b1225 100%);
-  border: 2px solid #17324a;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  display:block;
+  margin: 14px auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.28), inset 0 2px 10px rgba(255,255,255,0.06);
   cursor: crosshair;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(0,0,0,0.03));
 }
 
+/* Controls */
 .controls {
   margin-top: 12px;
   font-size: 14px;
-  color: #b6d3ff;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.25);
 }
 
 button {
   margin-top: 6px;
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 8px 14px;
+  border-radius: 10px;
   border: none;
-  background: #235a8a;
-  color: #eaf6ff;
+  background: #2b9bd4;
+  color: #fff;
   cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 12px rgba(43,155,212,0.28);
 }
-button:hover { background: #2a6ba6; }
+button:hover { transform: translateY(-1px); }
+
+/* small responsive tweak */
+@media (max-width:640px){
+  #scoreboard{ font-size:22px; padding:6px 10px;}
+}
